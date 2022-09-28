@@ -18,23 +18,14 @@ val_url="https://s3.amazonaws.com/kinetics/${DATASET}/train/k${DATASET}_val_path
 test_url="https://s3.amazonaws.com/kinetics/${DATASET}/train/k${DATASET}_test_path.txt"
 
 # 输出文件夹
-OUTPUT_DIR="kinetics${DATASET}" 
+OUTPUT_DIR="kinetics${DATASET}_tgz" 
 
-# 下载训练集视频 并解压数据
+# 下载训练集视频
 train_folder=$OUTPUT_DIR/train
 if [ ! -d $train_folder ]; then
     mkdir $train_folder
 fi
 wget -c -i $train_url -P $train_folder
-
-for f in $(ls $train_folder)
-do 
-    if [[ $f == *.tar.gz ]]; then
-        echo "Extracting ..."
-        tar zxf $train_folder/$f -C $train_folder
-        echo "Extracting succ, and rm $f"
-        rm $train_folder/$f
-done 
 
 # 下载验证集视频
 val_folder=$OUTPUT_DIR/val

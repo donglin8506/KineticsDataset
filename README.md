@@ -4,6 +4,9 @@
 
 该仓库引用自 https://github.com/cvdfoundation/kinetics-dataset
 
+https://github.com/open-mmlab/mmaction2/tree/master/tools/data/kinetics
+
+
 ## 数据集简介 
 
 官方地址: https://deepmind.com/research/open-source/kinetics
